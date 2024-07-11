@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rechargelist</title>
+    <link rel="stylesheet" href="rech.css">
+</head>
+
+<body>
+    <div class="all">
+        <div class="header">
+            <img id="img3" src="hamburger.png" alt="">
+            <img id="img1" src="Jio-Logo.png" alt="">
+            <input id="input" type="text" placeholder="Search">
+            <img id="img2" src="profile.png" alt="" fill="white">
+        </div>
+        <div class="img">
+            <img src="" alt="">
+            <h2>Recommended(4)</h2>
+            <div id="countdown" class="countdown">
+                <!-- Countdown timer will be displayed here -->
+            </div>
+        </div>
+        <div class="card">
+            <div class="rate">
+                <img src="true5g.svg" alt="" fill="red">
+                <div class="onlyh2">
+                    <h2 id="one">₹149</h2>
+                    <h2 id="two">₹349</h2>
+                    <h5> <a href="149rs.jpg">view details</a></h5>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="valid">
+                <h4>validity</h4>
+                <h4>DATA</h4>
+            </div>
+            <div class="days">
+                <h3>54 days</h3>
+                <h3>2 GB/day</h3>
+            </div>
+            <div class="sub">
+                <h5>SUBSCRIPTIONS</h5>
+                <img src="subs.PNG" alt="">
+                <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
+            </div>
+            <div class="btn">
+                <form action="pay.html">
+                    <button>Recharge</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- -------------------- -->
+        <div class="card">
+            <div class="rate">
+                <img src="true5g.svg" alt="" fill="red">
+                <div class="onlyh2">
+                    <h2 id="one">₹99</h2>
+                    <h2 id="two">₹149</h2>
+                    <h5> <a href="149rs.jpg">view details</a></h5>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="valid">
+                <h4>validity</h4>
+                <h4>DATA</h4>
+            </div>
+            <div class="days">
+                <h3>28 days</h3>
+                <h3>2 GB/day</h3>
+            </div>
+            <div class="sub">
+                <h5>SUBSCRIPTIONS</h5>
+                <img src="subs.PNG" alt="">
+                <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
+            </div>
+            <div class="btn">
+                <form action="pay.html">
+                    <button>Recharge</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- --------------------  -->
+        <div class="card">
+            <div class="rate">
+                <img src="true5g.svg" alt="" fill="red">
+                <div class="onlyh2">
+                    <h2 id="one">₹49</h2>
+                    <h2 id="two">₹99</h2>
+                    <h5> <a href="149rs.jpg">view details</a></h5>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="valid">
+                <h4>validity</h4>
+                <h4>DATA</h4>
+            </div>
+            <div class="days">
+                <h3>24 days</h3>
+                <h3>2 GB/day</h3>
+            </div>
+            <div class="sub">
+                <h5>SUBSCRIPTIONS</h5>
+                <img src="subs.PNG" alt="">
+                <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
+            </div>
+            <div class="btn">
+                <form action="pay.html">
+                    <button>Recharge</button>
+                </form>
+            </div>
+
+        </div>
+        <!-- --------------------------------- -->
+        <div class="card">
+            <div class="rate">
+                <img src="true5g.svg" alt="" fill="red">
+                <div class="onlyh2">
+                    <h2 id="one">₹19</h2>
+                    <h2 id="two">₹49</h2>
+                    <h5> <a href="149rs.jpg">view details</a></h5>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="valid">
+                <h4>validity</h4>
+                <h4>DATA</h4>
+            </div>
+            <div class="days">
+                <h3>1 days</h3>
+                <h3>Unlimited</h3>
+            </div>
+            <div class="sub">
+                <h5>SUBSCRIPTIONS</h5>
+                <img src="subs.PNG" alt="">
+                <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
+            </div>
+            <div class="btn">
+                <form action="pay.html">
+                    <button>Recharge</button>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set the target date and time for the countdown
+            var targetDate = new Date();
+            targetDate.setMinutes(targetDate.getMinutes() + 10); // Add 10 minutes to current time
+
+            // Update countdown every second
+            var countdownInterval = setInterval(function () {
+                var now = new Date();
+                var timeRemaining = targetDate - now;
+
+                // Calculate remaining minutes and seconds
+                var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                // Format minutes and seconds with leading zeros if necessary
+                var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+                var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+                // Update the countdown message
+                var countdownElement = document.getElementById('countdown');
+                countdownElement.textContent = `Hurry up! Time closing in ${formattedMinutes}:${formattedSeconds}`;
+
+                // If time remaining is less than or equal to 0, clear the interval and update message
+                if (timeRemaining <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownElement.textContent = 'Hurry up! Time has expired.';
+                }
+            }, 1000); // Update every second
+        });
+
+    </script>
+</body>
+
+</html>

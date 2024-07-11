@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rechargelist</title>
+    <link rel="stylesheet" href="dump.css">
+</head>
+<body>
+    <div class="all">
+        <div class="header">
+            <img id="img3" src="hamburger.png" alt="">
+            <img id="img1" src="Jio-Logo.png" alt="">
+            <input id="input" type="text" placeholder="Search">
+            <img id="img2" src="profile.png" alt="" fill="white">
+        </div>
+        <div class="img">
+            <img src="" alt="">
+            <h2>Recommended(4)</h2>
+        </div>
+        <div id="countdown" class="countdown">
+            <!-- Countdown timer will be displayed here -->
+        </div>
+        <!-- Your existing card elements -->
+        <div class="card">
+            <!-- Card content here -->
+        </div>
+    </div>
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+    // Set the target date and time for the countdown
+    var targetDate = new Date();
+    targetDate.setMinutes(targetDate.getMinutes() + 10); // Add 10 minutes to current time
+    
+    // Update countdown every second
+    var countdownInterval = setInterval(function() {
+        var now = new Date();
+        var timeRemaining = targetDate - now;
+        
+        // Calculate remaining minutes and seconds
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        
+        // Format minutes and seconds with leading zeros if necessary
+        var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+        var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+        
+        // Update the countdown message
+        var countdownElement = document.getElementById('countdown');
+        countdownElement.textContent = `Hurry up! Time closing in ${formattedMinutes}:${formattedSeconds}`;
+        
+        // If time remaining is less than or equal to 0, clear the interval and update message
+        if (timeRemaining <= 0) {
+            clearInterval(countdownInterval);
+            countdownElement.textContent = 'Hurry up! Time has expired.';
+        }
+    }, 1000); // Update every second
+});
+
+    </script>
+</body>
+</html>

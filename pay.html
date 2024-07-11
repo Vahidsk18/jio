@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+
+<body>
+    <div class="all">
+       
+        <div class="header">
+            <img id="img3" src="hamburger.png" alt="">
+            <img id="img1" src="Jio-Logo.png" alt="">
+            <input id="input" type="text" placeholder="Search">
+            <img id="img2" src="profile.png" alt="" fill="white">
+        </div>
+        <div id="countdown" class="countdown">
+            <!-- Coun>tdown timer will be displayed here -->
+        </div>
+        <div class="img">
+
+        </div>
+        <div class="box">
+            <p id="topp">Please select the payment :</p>
+            <div class="pays">
+                <img src="pp.png" alt="" height="15px " width=" 15px" class="img1">
+                  <label for="html" class="label">Phone Pay</label><br>
+                <img src="gpay.jpg" alt="" height="15px " width=" 15px">
+                  <label for="css" class="label">G Pay</label><br>
+                <img src="paytm.png" alt="" height="23px " width=" 27px">
+                  <label for="javascript " class="label">Paytm</label>
+            </div>
+        </div>
+        <div class="img">
+            <img src="allqr.jpg" alt=""  fill="white">
+        </div>
+        <h5 >or</h5>
+        <div class="upi">
+            <h3>UPI ⇩ :-</h3>
+            <h1>rockyyts@ybl</h1>
+        </div>
+        <div class="alt">
+            <h3>Alert:-</h3>
+        </div>
+        <div class="notice">
+            <h3>Scanner is not properly better do UPI payments</h3>
+            <h4>Send money to this this UPI or Scanner.Once you paid money ,immediatly recharge activated into your account</h4>
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Set the target date and time for the countdown
+    var targetDate = new Date();
+    targetDate.setMinutes(targetDate.getMinutes() + 10); // Add 10 minutes to current time
+    
+    // Update countdown every second
+    var countdownInterval = setInterval(function() {
+        var now = new Date();
+        var timeRemaining = targetDate - now;
+        
+        // Calculate remaining minutes and seconds
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        
+        // Format minutes and seconds with leading zeros if necessary
+        var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+        var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+        
+        // Update the countdown message
+        var countdownElement = document.getElementById('countdown');
+        countdownElement.textContent = `Hurry up! Time closing in ${formattedMinutes}:${formattedSeconds}`;
+        
+        // If time remaining is less than or equal to 0, clear the interval and update message
+        if (timeRemaining <= 0) {
+            clearInterval(countdownInterval);
+            countdownElement.textContent = 'Hurry up! Time has expired.';
+        }
+    }, 1000); // Update every second
+});
+
+    </script>
+</body>
+
+</html>

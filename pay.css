@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.countdown {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(41, 21, 219, 0.918);
+    padding: 10px;
+}
+
+.header #img1 {
+    height: 43px;
+    width: 75px;
+}
+
+.header #img2 {
+    height: 43px;
+    width: 45px;
+}
+
+.header #img3 {
+    height: 23px;
+    width: 22px;
+}
+
+.img h2 {
+    margin-left: 30px;
+    font-size: medium;
+
+
+}
+
+.box {
+    text-align: center;
+    border: 1x solid #808080;
+    /* height: 23vh; */
+    max-width: 80vw;
+    margin: auto;
+    /* display: flex;
+    flex-direction: column; */
+    margin-top: 7px;
+    
+}
+
+.box p {
+    position: relative;
+    top: 11px;
+}
+
+
+.pays {
+    display: flex;
+    flex-direction: column;
+
+}
+
+label {
+    position: relative;
+    font-size: larger;
+    font-weight: bolder;
+    left: 1vw;
+}
+
+.box img {
+    position: relative;
+    left: 23vw;
+    top: 9.4vw;
+
+}
+
+.img img {
+    position: relative;
+    left: 65px;
+    height: 300px;
+    width: 300px;
+
+}
+
+.upi h1,
+h3 ,h5{
+   text-align: center;
+   margin-top: 10px;
+}
+.notice h4,h3{
+    margin-top: 38px;
+    text-align: center;
+    position: relative;
+    left: 3px;
+
+}
+.alt h3{
+    margin-top: 55px;
+}
