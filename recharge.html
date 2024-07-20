@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rechargelist</title>
+    <title>Recharge List</title>
     <link rel="stylesheet" href="rech.css">
 </head>
 
@@ -47,9 +47,7 @@
                 <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
             </div>
             <div class="btn">
-                <form action="pay.html">
-                    <button>Recharge</button>
-                </form>
+                <button class="recharge-btn" data-amount="149">Recharge</button>
             </div>
 
         </div>
@@ -78,9 +76,7 @@
                 <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
             </div>
             <div class="btn">
-                <form action="pay.html">
-                    <button>Recharge</button>
-                </form>
+                <button class="recharge-btn" data-amount="99">Recharge</button>
             </div>
 
         </div>
@@ -109,9 +105,7 @@
                 <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
             </div>
             <div class="btn">
-                <form action="pay.html">
-                    <button>Recharge</button>
-                </form>
+                <button class="recharge-btn" data-amount="49">Recharge</button>
             </div>
 
         </div>
@@ -140,9 +134,7 @@
                 <h5 id="view"> <a href="149rs.jpg">view details</a></h5>
             </div>
             <div class="btn">
-                <form action="pay.html">
-                    <button>Recharge</button>
-                </form>
+                <button class="recharge-btn" data-amount="19">Recharge</button>
             </div>
 
         </div>
@@ -151,36 +143,24 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Set the target date and time for the countdown
-            var targetDate = new Date();
-            targetDate.setMinutes(targetDate.getMinutes() + 10); // Add 10 minutes to current time
+            var rechargeButtons = document.querySelectorAll('.recharge-btn');
 
-            // Update countdown every second
-            var countdownInterval = setInterval(function () {
-                var now = new Date();
-                var timeRemaining = targetDate - now;
-
-                // Calculate remaining minutes and seconds
-                var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-                // Format minutes and seconds with leading zeros if necessary
-                var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-                var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-
-                // Update the countdown message
-                var countdownElement = document.getElementById('countdown');
-                countdownElement.textContent = `Hurry up! Time closing in ${formattedMinutes}:${formattedSeconds}`;
-
-                // If time remaining is less than or equal to 0, clear the interval and update message
-                if (timeRemaining <= 0) {
-                    clearInterval(countdownInterval);
-                    countdownElement.textContent = 'Hurry up! Time has expired.';
-                }
-            }, 1000); // Update every second
+            rechargeButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var amount = this.getAttribute('data-amount');
+                    var upiLink = `upi://pay?pa=rockyyts@ybl&pn=Recipient&am=${amount}&cu=INR`;
+                    
+                    // Open the UPI link in the default browser or prompt user to open in payment app
+                    var paymentAppLink = document.createElement('a');
+                    paymentAppLink.href = upiLink;
+                    // paymentAppLink.target = '_blank'; // Open in new tab/window for better user experience
+                    paymentAppLink.click();
+                });
+            });
         });
 
     </script>
+
 </body>
 
 </html>

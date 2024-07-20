@@ -60,7 +60,6 @@
 .pays {
     display: flex;
     flex-direction: column;
-
 }
 
 label {
@@ -99,4 +98,26 @@ h3 ,h5{
 }
 .alt h3{
     margin-top: 55px;
+}
+
+
+
+
+
+
+#atag{
+    color: black;
+    position: relative;
+    top: -20px;
+}
+
+.pp{
+/* background-color: aqua; */
+position: relative;
+left: 14px;
+}
+.gp{
+/* background-color: aqua; */
+position: relative;
+left: -9px;
 }
